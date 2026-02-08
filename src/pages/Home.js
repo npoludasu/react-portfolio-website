@@ -72,8 +72,9 @@ function Home() {
         <h1
           ref={nameTextRef}
           className="text-2xl 
+          bg-gradient-to-r from-purple-700 via-pink-600 to-pink-700
+          bg-clip-text text-transparent
           leading-tight
-          text-blue-700
           md:text-4xl xl:text-5xl xl:leading-tight font-bold"
         >
           {name}
