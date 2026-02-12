@@ -88,9 +88,9 @@ export const techStackDetails = {
 // Enter your Project Details here
 export const projectDetails = [
   {
-    title: "Job Application Tracker",
+    title: "Job Application Tracker (On Going)",
     image: projectImage1,
-    description: `Developed a responsive React job tracking dashboard with CRUD operations, reusable components, custom hooks, search/filter/sorting, and localStorage persistence, optimized for performance and usability.`,
+    description: `Developing a responsive React job tracking dashboard with CRUD operations, reusable components, custom hooks, search/filter/sorting, and localStorage persistence, optimized for performance and usability.`,
     techstack: "React Js , Tailwind CSS",
     previewLink: "https://google.com",
     githubLink: "https://github.com",
