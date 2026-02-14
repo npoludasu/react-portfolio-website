@@ -32,15 +32,39 @@ function Technologies() {
                     justify-items-center items-center
                     gap-10 pt-6"
       >
-        <img src={html} title="html" alt="" />
-        <img src={css} title="CSS" alt="" />
-        <img src={js} title="JavaScript" alt="" />
-        <img src={react} title="React" alt="" />
-        <img src={redux} title="Redux" alt="" />{" "}
-        <img src={tailwind} title="Tailwind CSS" alt="" />{" "}
-        <img src={ts} title="TypeScript" alt="" />{" "}
-        <img src={java} title="Java" alt="" />{" "}
-        <img src={jQuery} title="JQuery" alt="" />{" "}
+        <div className="icon-size">
+          <img src={html} title="html" alt="" />
+        </div>
+        <div className="icon-size">
+          <img src={css} title="CSS" alt="" />
+        </div>
+        <div className="icon-size">
+          <img src={js} title="JavaScript" alt="" />
+        </div>
+
+        <div className="icon-size">
+          <img src={react} title="React" alt="" />
+        </div>
+
+        <div className="icon-size">
+          <img src={redux} title="Redux" alt="" />{" "}
+        </div>
+
+        <div className="icon-size">
+          <img src={tailwind} title="Tailwind CSS" alt="" />{" "}
+        </div>
+
+        <div className="icon-size">
+          <img src={ts} title="TypeScript" alt="" />{" "}
+        </div>
+
+        <div className="icon-size">
+          <img src={java} title="Java" alt="" />{" "}
+        </div>
+
+        <div className="icon-size">
+          <img src={jQuery} title="JQuery" alt="" />{" "}
+        </div>
       </section>
       <section>
         <h1 className="text-2xl pt-10 text-dark-heading dark:text-light-heading md:text-3xl xl:text-4xl xl:leading-tight font-bold">
@@ -55,11 +79,25 @@ function Technologies() {
                     justify-items-center items-center
                     gap-10 pt-6"
       >
-        <img src={vscode} title="Visual Studio Code" alt="VS Code" />
-        <img src={git} title="Git" alt="Git" />
-        <img src={github} title="Github" alt="Github" />
-        <img src={npm} title="NPM" alt="NPM" />
-        <img src={eclipse} title="eclipse" alt="eclispe" />
+        <div className="icon-size">
+          <img src={vscode} title="Visual Studio Code" alt="VS Code" />
+        </div>
+
+        <div className="icon-size">
+          <img src={git} title="Git" alt="Git" />
+        </div>
+
+        <div className="icon-size">
+          <img src={github} title="Github" alt="Github" />
+        </div>
+
+        <div className="icon-size">
+          <img src={npm} title="NPM" alt="NPM" />
+        </div>
+
+        <div className="icon-size">
+          <img src={eclipse} title="eclipse" alt="eclispe" />
+        </div>
       </section>
     </main>
   );
