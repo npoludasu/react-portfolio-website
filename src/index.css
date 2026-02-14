@@ -11,6 +11,10 @@
   @apply dark:text-light-content text-dark-content;
 }
 
+.icon-size{
+    @apply w-14 h-14 flex items-center justify-center;
+
+}
 body {
   overflow-x: hidden;
 }
