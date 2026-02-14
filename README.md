@@ -38,5 +38,3 @@ Email: naveen.poludasu1@gmail.com
 
 Location: Hyderabad, India
 
-
-⭐ Feel free to star the repo or use it as inspiration!
