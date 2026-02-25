@@ -46,6 +46,11 @@ export const workDetails = [
     Location: "Hyderabad",
     Type: "Full Time",
     Duration: "July 2023 - Present",
+    Role: [
+      "Developed reusable React components, improving UI consistency and reducing development effort by 30%.",
+      "Optimized Java-based Infor WebTop modules, improving stability and reducing UI defects by 20%.",
+      "Deployed Infor Infinium applications on IBM WebSphere with 99% success across prod, QA, and test environments.",
+    ],
   },
   {
     Position: "Graduate Engineer Trainee",
@@ -53,6 +58,10 @@ export const workDetails = [
     Location: "Remote",
     Type: "Internship",
     Duration: "Dec 2022 - May 2023",
+    Role: [
+      "Completed intensive training in Java, SQL, HTML, CSS, and JavaScript, gaining strong full-stack fundamentals.",
+      "Designed and developed dynamic web applications using HTML, CSS, JavaScript, and AJAX with jQuery.",
+    ],
   },
 ];
 
