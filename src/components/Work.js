@@ -1,7 +1,7 @@
 import React from "react";
 import locationIcon from "../assets/icons/location.svg";
 import officeIcon from "../assets/icons/office.svg";
-function Work({ position, company, location, type, duration }) {
+function Work({ position, company, location, type, duration ,role = [] }) {
   return (
     <article className="pt-4 border-b-2 border-dark-content pb-5 dark:border-light-content border-opacity-20 dark:border-opacity-20">
       <div className="flex justify-between items-center">
@@ -31,6 +31,18 @@ function Work({ position, company, location, type, duration }) {
           {duration}
         </p>
       </div>
+      {role.length > 0 && (
+        <ul className="list-disc list-inside space-y-1 mt-3">
+          {role.map((item, index) => (
+            <li
+              key={index}
+              className="text-content text-xs md:text-sm font-normal"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
     </article>
   );
 }
