@@ -1,5 +1,7 @@
 import React from "react";
 import { contactDetails } from "../data/details";
+import emailIcon from "../assets/icons/email.svg";
+import telephone from "../assets/icons/telephone.svg";
 
 function Contact() {
   const { email, phone } = contactDetails;
@@ -27,6 +29,7 @@ function Contact() {
             aria-label="Send email to Naveen"
             className="flex items-center justify-center gap-2"
           >
+            <img src={emailIcon} alt=""></img>
             <span
               className="flex text-2xl md:text-3xl font-semibold
                  bg-gradient-to-r from-purple-600 to-pink-600
@@ -53,6 +56,7 @@ function Contact() {
                          hover:underline transition
                          flex items-center justify-center gap-2"
           >
+            <img src={telephone} alt=""></img>
             {phone}
           </a>
 
