@@ -1,8 +1,23 @@
-# Portfolio Website
+# Naveen Poludasu - Portfolio Website
 
-Personal portfolio website showcasing my work as a Frontend Developer, built with React and modern UI practices.
+This is my personal portfolio website showcasing my skills, experience, and projects as a Frontend Developer.
+It highlights my work with React, modern UI development practices, and enterprise-level application experience.
 
-## Tech Stack
+ ## 🚀Features
+
+- Responsive and modern UI design
+
+- Built with React and Tailwind CSS
+
+- Clean component-based architecture
+
+- Accessible navigation with keyboard & screen-reader support
+
+- Optimized performance and reusable UI components
+
+- Dedicated sections for: Home, About, Tech Stack, Projects and Contact
+
+## 🛠️Tech Stack
 
 - React.js
 
@@ -10,31 +25,40 @@ Personal portfolio website showcasing my work as a Frontend Developer, built wit
 
 - Tailwind CSS
 
+- VS Code
 
-## Features
+## 🚀 Getting Started
 
-- Responsive and modern UI.
+1️⃣ Clone the repository
 
-- Reusable component-based architecture.
-
-- Accessible navigation.
-
-- Optimized performance.
-
-- Sections: Home · About · Tech Stack · Projects · Contact
-
-## Setup
 git clone **https://github.com/your-username/portfolio.git**
+
+2️⃣ Navigate to the project folder
 
 cd portfolio
 
+3️⃣ Install dependencies
+
 npm install
+
+4️⃣ Start the development server
 
 npm start
 
-## Contact
+
+The application will run at:
+
+👉 **http://localhost:3000**
+
+
+## 📬 Contact
+
+Feel free to reach out for opportunities, collaboration, or discussions.
 
 Email: naveen.poludasu1@gmail.com
 
 Location: Hyderabad, India
+
+
+
 
