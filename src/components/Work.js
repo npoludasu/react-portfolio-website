@@ -8,7 +8,7 @@ function Work({ position, company, location, type, duration ,role = [] }) {
         <h1 className="text-content md:text-lg lg:text-xl font-semibold">
           {position}
         </h1>
-        <div className="btn bg-greenbg text-green-text text-xs inline-block rounded-3xl px-3 py-1 min-w-fit">
+        <div className="btn bg-green-200 text-green-600 text-xs inline-block rounded-3xl px-3 py-1 min-w-fit">
           {type}
         </div>
       </div>
