@@ -86,10 +86,11 @@ function Home() {
           {tagline}
         </h2>
       </div>
-      <div className="mt-5 md:mt-0">
+      <div className="mt-10 flex justify-center">
         <img
           ref={imageRef}
-          className="w-1/2 md:ml-auto"
+          className="w-40 h-40 sm:w-48 sm:h-48 md:w-60 md:h-60 
+               rounded-full object-cover shadow-lg"
           src={img}
           alt="Naveen"
         />
