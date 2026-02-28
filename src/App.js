@@ -1,25 +1,43 @@
-import './App.css';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import About from './pages/About';
-import Technologies from './pages/Technologies';
-import Projects from './pages/Projects';
-import Contact from './pages/Contact';
+import "./App.css";
+//import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Technologies from "./pages/Technologies";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 function App() {
   return (
-    <Router>
+    <>
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/technologies" element={<Technologies />} />
-      </Routes>
+      <div className="pt-20">
+        <section id="home" className="min-h-screen scroll-mt-24">
+          <Home />
+        </section>
+      </div>
+      <div className="pt-20">
+        <section id="about" className="min-h-screen scroll-mt-24">
+          <About />
+        </section>
+      </div>
+      <div className="pt-20">
+        <section id="technologies" className="min-h-screen scroll-mt-24">
+          <Technologies />
+        </section>
+      </div>
+      <div className="pt-20">
+        <section id="projects" className="min-h-screen scroll-mt-24">
+          <Projects />
+        </section>
+      </div>
+      <div className="pt-20">
+        <section id="contact" className="min-h-screen scroll-mt-24">
+          <Contact />
+        </section>
+      </div>
       <Footer />
-    </Router>
+    </>
   );
 }
 
