@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useEffect } from "react";
 import { socialMediaUrl } from "../data/details";
 import MenuIcon from "../assets/icons/hamburger.svg";
 import Twitter from "../assets/icons/twitter.svg";
@@ -9,101 +9,228 @@ import GitHub from "../assets/icons/github.svg";
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const { linkedin, github, twitter } = socialMediaUrl;
-  const toggleClass = () => {
-    setIsOpen(!isOpen);
-  };
+  const [activeSection, setActiveSection] = useState("home");
+
+  const toggleMenu = () => setIsOpen(!isOpen);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        let maxRatio = 0;
+        let visibleSection = null;
+
+        entries.forEach((entry) => {
+          if (entry.intersectionRatio > maxRatio) {
+            maxRatio = entry.intersectionRatio;
+            visibleSection = entry.target.id;
+          }
+        });
+
+        if (visibleSection) {
+          setActiveSection(visibleSection);
+        }
+      },
+      {
+        threshold: [0.3, 0.5, 0.7],
+        rootMargin: "-70px 0px 0px 0px",
+      },
+    );
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
 
   return (
-    <header className="container mx-auto md:flex justify-between py-2 max-width">
-      <div className="flex justify-between items-center py-2 md:py-10">
+    <header className="fixed top-0 left-0 w-full bg-white/80 shadow-md z-50">
+      <div className="container mx-auto px-4 flex justify-between items-center py-4">
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex items-center space-x-8 font-medium">
+          <a
+            href="#home"
+            className={`hover:text-blue-600 ${
+              activeSection === "home" ? "text-purple-600 font-semibold" : ""
+            }`}
+          >
+            Home
+          </a>
+          <a
+            href="#about"
+            className={`hover:text-blue-600 ${
+              activeSection === "about" ? "text-purple-600 font-semibold" : ""
+            }`}
+          >
+            About
+          </a>
+          <a
+            href="#technologies"
+            className={`hover:text-blue-600 ${
+              activeSection === "technologies"
+                ? "text-purple-600 font-semibold"
+                : ""
+            }`}
+          >
+            Technologies
+          </a>
+          <a
+            href="#projects"
+            className={`hover:text-blue-600 ${
+              activeSection === "projects"
+                ? "text-purple-600 font-semibold"
+                : ""
+            }`}
+          >
+            Projects
+          </a>
+          <a
+            href="#contact"
+            className={`hover:text-blue-600 ${
+              activeSection === "contact" ? "text-purple-600 font-semibold" : ""
+            }`}
+          >
+            Contact
+          </a>
+        </nav>
+
+        {/* Desktop Social Icons */}
+        <div className="hidden md:flex items-center space-x-4">
+          <a href={twitter} target="_blank" rel="noreferrer">
+            <img src={Twitter} alt="Twitter" />
+          </a>
+          <a href={linkedin} target="_blank" rel="noreferrer">
+            <img src={LinkedIn} alt="LinkedIn" />
+          </a>
+          <a href={github} target="_blank" rel="noreferrer">
+            <img src={GitHub} alt="GitHub" />
+          </a>
+        </div>
+
+        {/* Mobile Hamburger */}
         <button
-          onClick={toggleClass}
-          className="md:hidden p-2"
-          aria-label="Toggle navigation menu"
+          onClick={toggleMenu}
+          className="md:hidden"
+          aria-label="Toggle menu"
         >
-          <img src={MenuIcon} alt="Menu"></img>
+          <img src={MenuIcon} alt="Menu" />
         </button>
+        <span className="text-lg font-semibold tracking-tight md:hidden  ">
+          Naveen
+        </span>
       </div>
-      <nav
-        className={` ${
-          !isOpen ? "hidden" : ""
-        } text-center md:flex justify-between`}
+
+      {/* Mobile Overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-40"
+          onClick={toggleMenu}
+        />
+      )}
+
+      <div
+        className={`fixed top-0 left-0 h-full w-64 bg-gray-200 shadow-lg z-50 transform transition-transform duration-300 ease-in-out
+        ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
-        <ul className="dark:text-light-content font-medium md:flex items-center md:space-x-5 md:mr-10">
-          <li className="pb-1 md:pb-0">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? "text-blue-700 font-semibold" : ""
-              }
-              onClick={toggleClass}
-            >
-              Home
-            </NavLink>
-          </li>
-          <li className="pb-1 md:pb-0">
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                isActive ? "text-blue-700 font-semibold" : ""
-              }
-              onClick={toggleClass}
-            >
-              About
-            </NavLink>
-          </li>
-          <li className="pb-1 md:pb-0">
-            <NavLink
-              to="/technologies"
-              className={({ isActive }) =>
-                isActive ? "text-blue-700 font-semibold" : ""
-              }
-              onClick={toggleClass}
-            >
-              Technologies
-            </NavLink>
-          </li>
-          <li className="pb-1 md:pb-0">
-            <NavLink
-              to="/projects"
-              className={({ isActive }) =>
-                isActive ? "text-blue-700 font-semibold" : ""
-              }
-              onClick={toggleClass}
-            >
-              Projects
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/contact"
-              className={({ isActive }) =>
-                isActive ? "text-blue-700 font-semibold" : ""
-              }
-              onClick={toggleClass}
-            >
-              Contact
-            </NavLink>
-          </li>
-        </ul>
-        <ul className="flex justify-evenly items-center my-5 md:my-0 md:space-x-5 md:mr-5">
-          <li>
-            <a href={twitter} target="_blank" rel="noreferrer noopener">
-              <img src={Twitter} alt="Twitter"></img>
+        <div className="p-6">
+          <ul className="space-y-2 font-medium">
+            <li>
+              <a
+                href="#home"
+                onClick={toggleMenu}
+                className={`block px-4 py-3 rounded-lg transition-colors duration-200
+                ${
+                  activeSection === "home"
+                    ? "bg-gray-200 font-semibold"
+                    : "hover:bg-gray-100"
+                }`}
+              >
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#about"
+                onClick={toggleMenu}
+                className={`block px-4 py-3 rounded-lg transition-colors duration-200
+                ${
+                  activeSection === "about"
+                    ? "bg-gray-200 font-semibold"
+                    : "hover:bg-gray-100"
+                }`}
+              >
+                About
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#technologies"
+                onClick={toggleMenu}
+                className={`block px-4 py-3 rounded-lg transition-colors duration-200
+                ${
+                  activeSection === "technologies"
+                    ? "bg-gray-200 font-semibold"
+                    : "hover:bg-gray-100"
+                }`}
+              >
+                Technologies
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#projects"
+                onClick={toggleMenu}
+                className={`block px-4 py-3 rounded-lg transition-colors duration-200
+                ${
+                  activeSection === "projects"
+                    ? "bg-gray-200 font-semibold"
+                    : "hover:bg-gray-100"
+                }`}
+              >
+                Projects
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="#contact"
+                onClick={toggleMenu}
+                className={`block px-4 py-3 rounded-lg transition-colors duration-200
+                ${
+                  activeSection === "contact"
+                    ? "bg-gray-200 font-semibold"
+                    : "hover:bg-gray-100"
+                }`}
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+
+          <div className="flex space-x-4 mt-10">
+            <a href={twitter} target="_blank" rel="noreferrer">
+              <div className="w-8 h-8 flex items-center justify-center">
+                <img src={Twitter} alt="Twitter" className="w-6 h-6" />
+              </div>
             </a>
-          </li>
-          <li>
-            <a href={linkedin} target="_blank" rel="noreferrer noopener">
-              <img src={LinkedIn} alt="LinkedIn"></img>
+
+            <a href={linkedin} target="_blank" rel="noreferrer">
+              <div className="w-8 h-8 flex items-center justify-center">
+                <img src={LinkedIn} alt="LinkedIn" className="w-6 h-6" />
+              </div>
             </a>
-          </li>
-          <li>
-            <a href={github} target="_blank" rel="noreferrer noopener">
-              <img src={GitHub} alt="GitHub"></img>
+
+            <a href={github} target="_blank" rel="noreferrer">
+              <div className="w-8 h-8 flex items-center justify-center">
+                <img src={GitHub} alt="GitHub" className="w-5 h-5" />
+              </div>
             </a>
-          </li>
-        </ul>
-      </nav>
+          </div>
+        </div>
+      </div>
     </header>
   );
 }
