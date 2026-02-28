@@ -31,7 +31,7 @@ function Contact() {
           >
             <img src={emailIcon} alt=""></img>
             <span
-              className="flex text-2xl md:text-3xl font-semibold
+              className="flex text-xl md:text-3xl font-semibold
                  bg-gradient-to-r from-purple-600 to-pink-600
                  bg-clip-text text-transparent
                  leading-relaxed pb-1
