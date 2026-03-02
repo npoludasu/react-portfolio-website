@@ -32,6 +32,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -39,4 +40,20 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+.swiper {
+  --swiper-navigation-size: 22px;
+  --swiper-theme-color: #c026d3;
+}
+
+/* Remove default background */
+.swiper-button-prev,
+.swiper-button-next {
+  background: none !important;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-weight: 800;
 }
