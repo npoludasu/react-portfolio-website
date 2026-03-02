@@ -26,9 +26,8 @@ export const personalDetails = {
   name: "Naveen Poludasu",
   tagline: "Frontend Developer specializing in React & JavaScript",
   img: profile,
-  about: `Frontend Developer with 2.8 years of experience building scalable and user-friendly web applications using React, JavaScript, HTML5, and CSS3. Strong focus on developing reusable UI components, improving UI performance, and maintaining clean, maintainable code.
+  about: `Frontend Developer with 2.8 years of experience building scalable and user-friendly web applications using React, JavaScript, HTML5, and CSS3. Strong focus on developing reusable UI components, improving UI performance, and maintaining clean, maintainable code.`,
           
-  Experienced in integrating REST APIs, collaborating closely with backend and QA teams, and delivering features in enterprise environments. Hands-on exposure to WebSphere deployments.`,
 };
 
 // Enter your Social Media URLs here
@@ -99,7 +98,7 @@ export const projectDetails = [
   {
     title: "Job Application Tracker (On Going)",
     image: projectImage1,
-    description: `Developing a responsive React job tracking dashboard with CRUD operations, reusable components, custom hooks, search/filter/sorting, and localStorage persistence, optimized for performance and usability.`,
+    description: `Developing a responsive React job tracking dashboard with CRUD operations, reusable components, custom hooks, search/filter/sorting, localStorage persistence, and optimized for performance.`,
     techstack: "React Js , Tailwind CSS",
     previewLink: "https://google.com",
     githubLink: "https://github.com",
