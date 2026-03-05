@@ -17,6 +17,11 @@ import ts from "../assets/techicons/ts.png";
 import eclipse from "../assets/techicons/eclipse.png";
 import java from "../assets/techicons/java.png";
 import jQuery from "../assets/techicons/jQuery.png";
+import vite from "../assets/techicons/vite.png";
+import webpack from "../assets/techicons/webpack.png";
+import axios from "../assets/techicons/axios.png";
+import MySQL from "../assets/techicons/MySQL.png";
+import restapi from "../assets/techicons/restapi.png";
 // Porject Images
 import projectImage1 from "../assets/images/projects/project1.jpg";
 import projectImage2 from "../assets/images/projects/project2.jpg";
@@ -91,6 +96,11 @@ export const techStackDetails = {
   eclipse: eclipse,
   java: java,
   jQuery: jQuery,
+  vite:vite,
+  webpack:webpack,
+  axios:axios,
+  MySQL:MySQL,
+  restapi:restapi,
 };
 
 // Enter your Project Details here
