@@ -1,103 +1,108 @@
 import React from "react";
 import { techStackDetails } from "../data/details";
+
 function Technologies() {
   const {
     html,
     css,
     js,
     react,
-    redux,
     tailwind,
+    ts,
+    jQuery,
+    java,
+    MySQL,
+    restapi,
+    axios,
     vscode,
     git,
     github,
     npm,
-    ts,
     eclipse,
-    java,
-    jQuery,
+    vite,
+    webpack,
   } = techStackDetails;
+
+  const frontend = [
+    { img: html, name: "HTML" },
+    { img: css, name: "CSS" },
+    { img: js, name: "JavaScript" },
+    { img: react, name: "React" },
+    { img: tailwind, name: "Tailwind CSS" },
+    { img: ts, name: "TypeScript" },
+    { img: jQuery, name: "jQuery" },
+    { img: axios, name: "Axios" },
+  ];
+
+  const backend = [
+    { img: java, name: "Java" },
+    { img: MySQL, name: "MySQL" },
+    { img: restapi, name: "REST API" },
+  ];
+
+  const tools = [
+    { img: vscode, name: "VS Code" },
+    { img: git, name: "Git" },
+    { img: github, name: "GitHub" },
+    { img: npm, name: "NPM" },
+    { img: vite, name: "Vite" },
+    { img: webpack, name: "Webpack" },
+    { img: eclipse, name: "Eclipse" },
+  ];
+
+  const renderGrid = (items) => (
+    <section
+      className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6
+      justify-items-center items-center gap-10 pt-8"
+    >
+      {items.map((item) => (
+        <div
+          key={item.name}
+          className="flex flex-col items-center
+          transition-all duration-300
+          hover:scale-110 hover:-translate-y-1"
+        >
+          <img
+            src={item.img}
+            alt={item.name}
+            className="w-16 h-16 object-contain"
+          />
+          <p className="text-sm mt-2 text-content font-medium">{item.name}</p>
+        </div>
+      ))}
+    </section>
+  );
   return (
-    <main className="container mx-auto max-width pt-2 pb-20 ">
-      <section>
-        <h1 className="text-2xl text-dark-heading dark:text-light-heading md:text-3xl xl:text-4xl xl:leading-tight font-bold">
-          Tech Stack
+    <main className="container mx-auto max-width pt-6 pb-20">
+      {/* Main Heading */}
+      <section className="mb-10">
+        <h1 className="text-2xl md:text-3xl xl:text-5xl font-bold text-dark-heading dark:text-light-heading">
+          Technologies
         </h1>
-        {/* <p className="text-content py-2 lg:max-w-3xl font-semibold">
-          Technologies I Work With
-        </p> */}
       </section>
-      <section
-        className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6
-                    justify-items-center items-center
-                    gap-10 pt-6"
-      >
-        <div className="icon-size">
-          <img src={html} title="html" alt="" />
-        </div>
-        <div className="icon-size">
-          <img src={css} title="CSS" alt="" />
-        </div>
-        <div className="icon-size">
-          <img src={js} title="JavaScript" alt="" />
-        </div>
 
-        <div className="icon-size">
-          <img src={react} title="React" alt="" />
-        </div>
-
-        <div className="icon-size">
-          <img src={redux} title="Redux" alt="" />{" "}
-        </div>
-
-        <div className="icon-size">
-          <img src={tailwind} title="Tailwind CSS" alt="" />{" "}
-        </div>
-
-        <div className="icon-size">
-          <img src={ts} title="TypeScript" alt="" />{" "}
-        </div>
-
-        <div className="icon-size">
-          <img src={java} title="Java" alt="" />{" "}
-        </div>
-
-        <div className="icon-size">
-          <img src={jQuery} title="JQuery" alt="" />{" "}
-        </div>
+      {/* Frontend */}
+      <section className="mb-12">
+        <h2 className="text-xl md:text-2xl font-semibold text-dark-heading dark:text-light-heading">
+          Frontend
+        </h2>
+        {renderGrid(frontend)}
       </section>
+
+      {/* Backend */}
+      <section className="mb-12">
+        <h2 className="text-xl md:text-2xl font-semibold text-dark-heading dark:text-light-heading">
+          Backend / API
+        </h2>
+        {renderGrid(backend)}
+      </section>
+
+      {/* Tools */}
       <section>
-        <h1 className="text-2xl pt-10 text-dark-heading dark:text-light-heading md:text-3xl xl:text-4xl xl:leading-tight font-bold">
+        <h2 className="text-xl md:text-2xl font-semibold text-dark-heading dark:text-light-heading">
           Tools
-        </h1>
-        {/* <p className="text-content py-2 lg:max-w-3xl font-semibold">
-          Tools I Work With
-        </p> */}
-      </section>
-      <section
-        className="grid grid-cols-4 md:grid-cols-5 lg:grid-cols-6
-                    justify-items-center items-center
-                    gap-10 pt-6"
-      >
-        <div className="icon-size">
-          <img src={vscode} title="Visual Studio Code" alt="VS Code" />
-        </div>
-
-        <div className="icon-size">
-          <img src={git} title="Git" alt="Git" />
-        </div>
-
-        <div className="icon-size">
-          <img src={github} title="Github" alt="Github" />
-        </div>
-
-        <div className="icon-size">
-          <img src={npm} title="NPM" alt="NPM" />
-        </div>
-
-        <div className="icon-size">
-          <img src={eclipse} title="eclipse" alt="eclispe" />
-        </div>
+        </h2>
+        {renderGrid(tools)}
       </section>
     </main>
   );
