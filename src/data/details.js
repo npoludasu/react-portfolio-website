@@ -31,7 +31,7 @@ export const personalDetails = {
   name: "Naveen Poludasu",
   tagline: "Frontend Developer specializing in React & JavaScript",
   img: profile,
-  about: `Frontend Developer with 2.8 years of experience building scalable and user-friendly web applications using React, JavaScript, HTML5, and CSS3. Strong focus on developing reusable UI components, improving UI performance, and maintaining clean, maintainable code.`,
+  about: 'Frontend Developer with 2.10 years of experience in building scalable, high-performance web applications using React.js, JavaScript (ES6+), and modern UI architecture. Specialized in reusable component design, state management with Hooks & Context API, performance optimization, and enterprise-level UI deployments. Passionate about creating responsive and accessible user experiences.'
           
 };
 
@@ -110,8 +110,8 @@ export const projectDetails = [
     image: projectImage1,
     description: `Developing a responsive React job tracking dashboard with CRUD operations, reusable components, custom hooks, search/filter/sorting, localStorage persistence, and optimized for performance.`,
     techstack: "React Js , Tailwind CSS",
-    previewLink: "https://google.com",
-    githubLink: "https://github.com",
+    previewLink: "https://jobflow-dashboard-ngr1.vercel.app/",
+    githubLink: "https://github.com/npoludasu/jobflow-dashboard",
   },
   {
     title: "Cricket Scoring App",
